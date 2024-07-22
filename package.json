@@ -2,26 +2,42 @@
   "name": "myfirstnodejsserver",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/server.js",
+  "bin": "dist/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node src/server.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "pkg": "pkg ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
+    "js-sha3": "^0.9.3",
     "morgan": "^1.10.0",
-    "mysql2": "^3.10.3"
+    "mysql2": "^3.10.3",
+    "on-finished": "^2.4.1",
+    "winston": "^3.13.1"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.5",
     "@types/express": "^4.17.21",
     "@types/morgan": "^1.9.9",
     "@types/node": "^20.14.11",
+    "@types/on-finished": "^2.3.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.3"
+  },
+  "pkg": {
+    "targets": [
+      "node14-macos-x64"
+    ],
+    "assets": [
+      "public/**/*"
+    ],
+    "scripts": [
+      "dist/server.js"
+    ]
   }
 }

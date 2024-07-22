@@ -9,7 +9,7 @@ export async function queryUserByUserName(username: string):Promise<User[]> {
 }   
 
 export async function queryUserByEmail(email: string):Promise<User[]> {
-    const query = 'SELECT * FROM User WHERE username = ?'
+    const query = 'SELECT * FROM User WHERE email = ?'
     const [rows] = await pool.execute(query, [email])
     const users: User[] = (rows as User[])
     return users

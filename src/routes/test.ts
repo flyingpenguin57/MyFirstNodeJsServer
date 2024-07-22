@@ -1,3 +1,6 @@
+/**
+ * 本路由测试使用
+ */
 import { Router, Request, Response } from 'express'
 
 const router = Router()
@@ -7,6 +10,7 @@ router.get('/error', (req: Request, res: Response) => {
   throw new Error('Something went wrong');
 })
 
+//post模拟
 router.post('/data', (req: Request, res: Response) => {
   console.log(req.body)
   res.send('Data received')

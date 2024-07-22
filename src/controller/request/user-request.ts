@@ -1,14 +1,14 @@
 export interface Address {
-  street: string;
-  city: string;
-  state: string;
-  zip: string;
+  street: string
+  city: string
+  state: string
+  zip: string
 }
 
 export interface User {
-  username: string;
-  email: string;
+  username: string
+  email: string
   password: string
   phone: string
-  address: Address;
+  address: Address
 }
